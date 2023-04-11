@@ -52,7 +52,7 @@ class WpBuildCommand extends Command {
 							null,
 							InputOption::VALUE_REQUIRED,
 							'The build directory.',
-							'./build/plugin'
+							'./build/project'
 						),
 					]
 				)

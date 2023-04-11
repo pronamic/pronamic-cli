@@ -50,7 +50,7 @@ class ReleaseCommand extends Command {
 							null,
 							InputOption::VALUE_REQUIRED,
 							'The build directory.',
-							'./build/plugin'
+							'./build/project'
 						),
 						new InputOption(
 							'svn-dir',
