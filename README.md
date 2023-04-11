@@ -18,7 +18,7 @@
 Show the changelong entry of a specific version from `CHANGELOG.md`.
 
 ```sh
-bin/wp-deployer changelog 1.0.0
+vendor/bin/pronamic changelog 1.0.0
 ```
 
 ### `svn-release`
@@ -26,7 +26,7 @@ bin/wp-deployer changelog 1.0.0
 Release a directory to a Subversion repository.
 
 ```sh
-bin/wp-deployer svn-release build/plugin build/svn https://plugins.svn.wordpress.org/pronamic-pay-with-mollie-for-gravity-forms 1.0.0
+vendor/bin/pronamic svn-release build/plugin build/svn https://plugins.svn.wordpress.org/pronamic-pay-with-mollie-for-gravity-forms 1.0.0
 ```
 
 ### `wp-org-release`
@@ -34,26 +34,26 @@ bin/wp-deployer svn-release build/plugin build/svn https://plugins.svn.wordpress
 Release a directory to the WordPress Plugin Directory.
 
 ```sh
-bin/wp-deployer wp-org-release build/plugin build/svn pronamic-pay-with-mollie-for-gravity-forms
+vendor/bin/pronamic wp-org-release build/plugin build/svn pronamic-pay-with-mollie-for-gravity-forms
 ```
 
 ## Examples
 
 ```sh
-bin/wp-deployer deploy easycruit https://gitlab.com/pronamic-plugins/easycruit.git --to-s3 -vvv
-bin/wp-deployer deploy pronamic-client https://github.com/pronamic/wp-pronamic-client.git --to-s3 --to-wp-org -vvv
-bin/wp-deployer deploy pronamic-events https://github.com/pronamic/wp-pronamic-events.git --to-s3 --to-wp-org -vvv
-bin/wp-deployer deploy pronamic-ideal https://github.com/pronamic/wp-pronamic-ideal.git --to-s3 --to-wp-org -vvv
-bin/wp-deployer deploy pronamic-ideal https://github.com/pronamic/wp-pronamic-ideal.git --branch=develop --to-s3 -vvv
-bin/wp-deployer deploy woocommerce-bulk-product-variations https://gitlab.com/pronamic-plugins/woocommerce-bulk-product-variations.git --to-s3 -vvv
-bin/wp-deployer deploy pronamic-pay-adyen https://github.com/wp-pay-gateways/adyen.git --to-s3 -vvv
-bin/wp-deployer deploy pronamic-pay-adyen https://github.com/wp-pay-gateways/adyen.git --to-s3 -vvv
-bin/wp-deployer deploy pronamic-pay-contact-form-7 https://github.com/pronamic/wp-pronamic-pay-contact-form-7.git --to-s3 -vvv
-bin/wp-deployer deploy pronamic-pay-contact-form-7 https://github.com/pronamic/wp-pronamic-pay-contact-form-7.git --to-s3 -vvv
-bin/wp-deployer deploy pronamic-pay-digiwallet https://github.com/pronamic/wp-pronamic-pay-digiwallet.git --branch=main --to-s3 -vvv
-bin/wp-deployer deploy pronamic-pay-fundraising https://github.com/pronamic/wp-pronamic-pay-fundraising.git --to-s3 -vvv
-bin/wp-deployer deploy pronamic-pay-paypal https://github.com/pronamic/wp-pronamic-pay-paypal.git --to-s3 -vvv
-bin/wp-deployer deploy pronamic-pay-payvision https://github.com/pronamic/wp-pronamic-pay-payvision.git --branch=main --to-s3 -vvv
+vendor/bin/pronamic deploy easycruit https://gitlab.com/pronamic-plugins/easycruit.git --to-s3 -vvv
+vendor/bin/pronamic deploy pronamic-client https://github.com/pronamic/wp-pronamic-client.git --to-s3 --to-wp-org -vvv
+vendor/bin/pronamic deploy pronamic-events https://github.com/pronamic/wp-pronamic-events.git --to-s3 --to-wp-org -vvv
+vendor/bin/pronamic deploy pronamic-ideal https://github.com/pronamic/wp-pronamic-ideal.git --to-s3 --to-wp-org -vvv
+vendor/bin/pronamic deploy pronamic-ideal https://github.com/pronamic/wp-pronamic-ideal.git --branch=develop --to-s3 -vvv
+vendor/bin/pronamic deploy woocommerce-bulk-product-variations https://gitlab.com/pronamic-plugins/woocommerce-bulk-product-variations.git --to-s3 -vvv
+vendor/bin/pronamic deploy pronamic-pay-adyen https://github.com/wp-pay-gateways/adyen.git --to-s3 -vvv
+vendor/bin/pronamic deploy pronamic-pay-adyen https://github.com/wp-pay-gateways/adyen.git --to-s3 -vvv
+vendor/bin/pronamic deploy pronamic-pay-contact-form-7 https://github.com/pronamic/wp-pronamic-pay-contact-form-7.git --to-s3 -vvv
+vendor/bin/pronamic deploy pronamic-pay-contact-form-7 https://github.com/pronamic/wp-pronamic-pay-contact-form-7.git --to-s3 -vvv
+vendor/bin/pronamic deploy pronamic-pay-digiwallet https://github.com/pronamic/wp-pronamic-pay-digiwallet.git --branch=main --to-s3 -vvv
+vendor/bin/pronamic deploy pronamic-pay-fundraising https://github.com/pronamic/wp-pronamic-pay-fundraising.git --to-s3 -vvv
+vendor/bin/pronamic deploy pronamic-pay-paypal https://github.com/pronamic/wp-pronamic-pay-paypal.git --to-s3 -vvv
+vendor/bin/pronamic deploy pronamic-pay-payvision https://github.com/pronamic/wp-pronamic-pay-payvision.git --branch=main --to-s3 -vvv
 ```
 
 ## Alternatives
