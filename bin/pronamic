@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+
+namespace Pronamic\CLI;
+
+include $_composer_autoload_path ?? __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+
+$application = new Application( 'Pronamic CLI', '1.0.0' );
+
+$application->add( new ChangelogCommand() );
+$application->add( new DeployCommand() );
+$application->add( new ReleaseCommand() );
+$application->add( new SvnReleaseCommand() );
+$application->add( new VersionCommand() );
+$application->add( new WpBuildCommand() );
+$application->add( new WpOrgReleaseCommand() );
+
+$application->run();

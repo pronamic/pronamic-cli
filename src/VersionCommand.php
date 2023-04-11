@@ -8,7 +8,7 @@
  * @package   Pronamic\Deployer
  */
 
-namespace Pronamic\Deployer;
+namespace Pronamic\CLI;
 
 use Acme\Command\DefaultCommand;
 use Symfony\Component\Console\Command\Command;

@@ -1,7 +1,7 @@
-<h1 align="center">Pronamic WordPress Deployer</h3>
+<h1 align="center">Pronamic CLI</h3>
 
 <p align="center">
-	Console application to <strong>build</strong> and <strong>deploy</strong> WordPress solutions to the <strong>WordPress.org repository</strong> and <strong>AWS S3</strong>.
+	Pronamic CLI is the command-line interface for Pronamic.
 </p>
 
 ## Table of contents

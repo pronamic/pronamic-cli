@@ -8,7 +8,7 @@
  * @package   Pronamic\Deployer
  */
 
-namespace Pronamic\Deployer;
+namespace Pronamic\CLI;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\ArrayInput;

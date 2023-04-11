@@ -1,6 +1,6 @@
 {
-    "name": "pronamic/wp-deployer",
-    "description": "WordPress deployer.",
+    "name": "pronamic/pronamic-cli",
+    "description": "Pronamic CLI is the command-line interface for Pronamic.",
     "authors": [
         {
             "name": "Pronamic",
@@ -9,11 +9,11 @@
     ],
     "autoload": {
         "psr-4": {
-            "Pronamic\\Deployer\\": "src/"
+            "Pronamic\\CLI\\": "src/"
         }
     },
     "bin": [
-        "bin/wp-deployer"
+        "bin/pronamic"
     ],
     "require": {
         "php": ">=7.4",

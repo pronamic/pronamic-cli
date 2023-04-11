@@ -8,7 +8,7 @@
  * @package   Pronamic\Deployer
  */
 
-namespace Pronamic\Deployer;
+namespace Pronamic\CLI;
 
 /**
  * Git commit class
