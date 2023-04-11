@@ -1,0 +1,146 @@
+# Git (https://git-scm.com/)
+.git
+.gitignore
+.gitattributes
+
+# .DS_Store (https://en.wikipedia.org/wiki/.DS_Store)
+.DS_Store
+
+# Code of Conduct
+CODE_OF_CONDUCT.md
+
+# WordPress
+/wordpress/
+/wp-content/
+
+# WordPress.org assets
+/.wordpress-org/
+/assets-wp-repo/
+/wordpress_org_assets/
+
+# Composer (https://getcomposer.org/)
+/vendor/
+
+# Composer bin plugin (https://github.com/bamarni/composer-bin-plugin)
+/vendor-bin/
+
+# Eclipse (https://www.eclipse.org/)
+.buildpath
+.project
+.settings
+
+# Node.js (https://nodejs.org/)
+/node_modules/
+
+# BabelRC (https://babeljs.io/)
+.babelrc
+
+# Code Climate (https://codeclimate.com/)
+.codeclimate.yml
+
+# Codecov (https://codecov.io/)
+.codecov.yml
+
+# CSScomb (http://csscomb.com/)
+.csscomb.json
+
+# CSSLint (https://github.com/CSSLint/csslint)
+.csslintrc
+
+# stylelint (https://stylelint.io/)
+.stylelintrc
+.stylelintrc.json
+
+# EditorConfig (https://editorconfig.org/)
+.editorconfig
+
+# ESLint (https://eslint.org/)
+.eslintignore
+.eslintrc
+
+# JSHint (http://jshint.com/about/)
+.jshintrc
+
+# Sass (https://sass-lang.com/)
+.sass-cache
+
+# Sass Lint (https://github.com/sasstools/sass-lint)
+.sass-lint.yml
+
+# Scrutinizer CI (https://scrutinizer-ci.com/)
+.scrutinizer.yml
+
+# Travis CI (https://travis-ci.org/)
+.travis.yml
+
+# GitHub
+.github
+
+# Grunt (https://gruntjs.com/)
+Gruntfile.js
+
+# Bower (https://bower.io/)
+bower.json
+
+# Yarn (https://yarnpkg.com/)
+yarn.lock
+
+# ApiGen (http://apigen.org/)
+apigen.neon
+
+# PHPCI (https://www.phptesting.org/)
+phpci.yml
+
+# PHP_CodeSniffer (https://github.com/squizlabs/PHP_CodeSniffer)
+phpcs.xml
+phpcs.xml.dist
+phpcs.ruleset.xml
+
+# phpDocumentor (https://www.phpdoc.org/)
+phpdoc.xml
+phpdoc.dist.xml
+
+# PHPLint (https://github.com/overtrue/phplint)
+.phplint.yml
+
+# PHP Mess Detector (https://phpmd.org/)
+phpmd.ruleset.xml
+phpmd.xml.dist
+
+# PHPUnit (https://phpunit.de/)
+phpunit.xml
+phpunit.xml.dist
+
+# PHP Static Analysis Tool (https://github.com/phpstan/phpstan)
+phpstan.neon.dist
+
+# PostCSS (https://postcss.org/)
+postcss.config.js
+
+# Psalm (https://github.com/vimeo/psalm)
+psalm.xml.dist
+
+# PHP-Scoper (https://github.com/humbug/php-scoper)
+scoper.inc.php
+
+# pNpm (https://pnpm.io/)
+pnpm-lock.yaml
+
+# IntelliJ's project specific settings files
+# @link https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
+.idea
+
+# Webpack (https://webpack.js.org/)
+webpack.config.js
+
+# WP-CLI (https://wp-cli.org/)
+wp-cli.yml
+
+# wp-env (https://github.com/WordPress/gutenberg/tree/trunk/packages/env)
+.wp-env.json
+
+# WordPress distribution archive (https://developer.wordpress.org/cli/commands/dist-archive/)
+.distignore
+
+# Pronamic build ignore
+.pronamic-build-ignore

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<ruleset name="Pronamic Deployer rules">
+	<file>.</file>
+
+	<exclude-pattern type="relative">^deploy/*</exclude-pattern>
+	<exclude-pattern type="relative">*/vendor/*</exclude-pattern>
+
+	<rule ref="PronamicWP">
+		<exclude name="WordPress.Security.EscapeOutput.OutputNotEscaped" />
+
+		<exclude name="WordPressVIPMinimum.Performance.FetchingRemoteData.FileGetContentsUnknown" />
+		<exclude name="WordPressVIPMinimum.Functions.RestrictedFunctions.file_ops_file_put_contents" />
+
+		<exclude name="WordPress.WP.AlternativeFunctions.parse_url_parse_url" />
+	</rule>
+</ruleset>

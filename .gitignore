@@ -1,0 +1,12 @@
+# Composer
+/composer.lock
+vendor/
+
+# Deploy
+/deploy/
+
+# PHPUnit
+/.phpunit.result.cache
+
+# Tests
+/tests/plugin/build/
