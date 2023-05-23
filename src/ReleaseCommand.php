@@ -66,10 +66,10 @@ class ReleaseCommand extends Command {
 							'Release to Google Cloud Storage?'
 						),
 						new InputOption(
-							'pronamic-eu',
+							'pronamic-directory',
 							null,
 							InputOption::VALUE_NONE,
-							'Release to Pronamic.eu?'
+							'Release to Pronamic.directory?'
 						),
 						new InputOption(
 							'github',
@@ -182,11 +182,11 @@ class ReleaseCommand extends Command {
 			$helper->mustRun( $output, $process );
 		}
 
-		// Pronamic.eu.
-		$release_to_pronamic_eu = $input->getOption( 'pronamic-eu' );
+		// Pronamic.directory.
+		$release_to_pronamic_directory = $input->getOption( 'pronamic-directory' );
 
-		if ( $release_to_pronamic_eu ) {
-			$io->section( 'Pronamic.eu' );
+		if ( $release_to_pronamic_directory ) {
+			$io->section( 'Pronamic.directory' );
 
 			$command = [
 				'curl',
@@ -195,7 +195,7 @@ class ReleaseCommand extends Command {
 				'version=' . $version,
 				'--request',
 				'PATCH',
-				'https://www.pronamic.eu/wp-json/pronamic-wp-extensions/v1/plugins/' . $slug,
+				'https://wp.pronamic.directory/wp-json/pronamic-wp-extensions/v1/plugins/' . $slug,
 			];
 
 			$process = new Process( $command );
