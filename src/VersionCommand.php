@@ -245,11 +245,6 @@ class VersionCommand extends Command {
 		$bump_method = $io->choice(
 			'Select bump method',
 			[
-				'same' => \sprintf( 
-					'Same: from %s to %s.',
-					'<info>' . $version . '</info>',
-					'<info>' . $version . '</info>'
-				),
 				'major' => \sprintf( 
 					'Major: from %s to %s.',
 					'<info>' . $version . '</info>',
@@ -271,10 +266,6 @@ class VersionCommand extends Command {
 		switch ( $bump_method ) {
 			case 'input':
 				$new_version = $io->ask( 'New version?' );
-
-				break;
-			case 'same':
-				$new_version = $version;
 
 				break;
 			case 'major':
