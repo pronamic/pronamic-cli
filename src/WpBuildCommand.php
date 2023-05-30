@@ -171,7 +171,7 @@ class WpBuildCommand extends Command {
 		$slug = $project->get_slug();
 
 		if ( empty( $slug ) ) {
-			$io->note( 'The slug could not be determined, define it in <fg=green>composer.json</fg=green> <fg=green>config.wp-slug</fg=green>.' );
+			$io->text( 'The slug could not be determined, define it in <fg=green>composer.json</fg=green> <fg=green>config.wp-slug</fg=green>.' );
 		}
 
 		// WP-CLI.
