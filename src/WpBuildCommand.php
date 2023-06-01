@@ -159,7 +159,7 @@ class WpBuildCommand extends Command {
 			 * 
 			 * @link https://github.com/squizlabs/PHP_CodeSniffer/issues/3057
 			 * @link https://github.com/squizlabs/PHP_CodeSniffer/issues/2898
-			 */			
+			 */         
 			$helper->run( $output, $process );
 		}
 

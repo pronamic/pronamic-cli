@@ -816,14 +816,13 @@ class VersionCommand extends Command {
 		$tag_list_no_prefix = array_filter(
 			$tag_list,
 			function( $tagname ) {
-				if ( 
-					\in_array(
-						$tagname,
-						[
-							'nightly',
-						],
-						true
-					)
+				if ( \in_array(
+					$tagname,
+					[
+						'nightly',
+					],
+					true
+				)
 				) {
 					return false;
 				}

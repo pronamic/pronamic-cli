@@ -84,7 +84,7 @@ class Changelog {
 				if ( $i === $last_line ) {
 					if ( \str_starts_with( $line, '[' . $version . ']' ) ) {
 						$end = $i;
-					} else if ( null !== $empty_line ) {
+					} elseif ( null !== $empty_line ) {
 						$end = $empty_line;
 					}
 				}

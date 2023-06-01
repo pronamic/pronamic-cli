@@ -87,7 +87,7 @@ class ChangelogEntry {
 			'',
 			'Full set of changes: [`' . $this->get_version_compare() . '`][' . $this->version . ']',
 			'',
-			'[' . $this->version . ']: ' . $this->get_link()
+			'[' . $this->version . ']: ' . $this->get_link(),
 		];
 
 		return \implode( "\n", $lines );

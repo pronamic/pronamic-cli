@@ -120,7 +120,7 @@ class SvnReleaseCommand extends Command {
 
 		$svn_auth = '--no-auth-cache';
 
-		if ( ! empty( $username )  ) {
+		if ( ! empty( $username ) ) {
 			$svn_auth .= '--username ' . $username;
 		}
 
