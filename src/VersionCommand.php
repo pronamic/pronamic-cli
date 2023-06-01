@@ -70,7 +70,7 @@ class VersionCommand extends Command {
 		$composer_json_file = $cwd . '/composer.json';
 		$package_json_file  = $cwd . '/package.json';
 
-		$io->title( 'Pronamic Deployer version' );
+		$io->title( 'Pronamic CLI version' );
 
 		/**
 		 * Git pull.
