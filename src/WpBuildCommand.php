@@ -190,7 +190,7 @@ class WpBuildCommand extends Command {
 				$build_dir,
 			];
 
-			if ( $slug !== null ) {
+			if ( null !== $slug ) {
 				$command[] = '--slug=' . $slug;
 			}
 
@@ -211,7 +211,7 @@ class WpBuildCommand extends Command {
 				$build_dir,
 			];
 
-			if ( $slug !== null ) {
+			if ( null !== $slug ) {
 				$command[] = '--plugin-dirname=' . $slug;
 			}
 

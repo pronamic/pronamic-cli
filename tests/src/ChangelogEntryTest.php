@@ -42,7 +42,7 @@ class ChangelogEntryTest extends TestCase {
 		[1.0.0]: /releases/tag/v1.0.0
 		END;
 
-		$expected = \str_replace( '2023-03-30', \date( 'Y-m-d' ), $expected );
+		$expected = \str_replace( '2023-03-30', \gmdate( 'Y-m-d' ), $expected );
 
 		$this->assertEquals( $expected, $render );
 	}

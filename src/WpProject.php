@@ -18,12 +18,27 @@ namespace Pronamic\CLI;
  * @since   1.0.0
  */
 class WpProject {
+	/**
+	 * Directory.
+	 * 
+	 * @var string
+	 */
 	private $directory;
 
+	/**
+	 * Construct WordPress project.
+	 * 
+	 * @param string $directory Directory.
+	 */
 	public function __construct( $directory ) {
 		$this->directory = $directory;
 	}
 
+	/**
+	 * Get slug.
+	 * 
+	 * @return null|string
+	 */
 	public function get_slug() {
 		$slug = null;
 
@@ -42,6 +57,11 @@ class WpProject {
 		return $slug;
 	}
 
+	/**
+	 * Get version.
+	 * 
+	 * @return null|string
+	 */
 	public function get_version() {
 		$version = null;
 
@@ -60,6 +80,11 @@ class WpProject {
 		return $version;
 	}
 
+	/**
+	 * Get changelog.
+	 * 
+	 * @return Changelog
+	 */
 	public function get_changelog() {
 		$changelog_file = $this->directory . '/CHANGELOG.md';
 
