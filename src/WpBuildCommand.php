@@ -104,6 +104,10 @@ class WpBuildCommand extends Command {
 			'--recursive',
 			'--delete',
 			'--verbose',
+			'--exclude=' . Path::makeRelative(
+				getcwd() . '/' . $build_dir,
+				getcwd()
+			),
 			'--exclude-from=' . $exclude_file,
 		];
 
