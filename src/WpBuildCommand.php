@@ -181,49 +181,52 @@ class WpBuildCommand extends Command {
 		// WP-CLI.
 		$bin_wp = $bin_dir . '/wp';
 
-		// Make POT.
-		if ( file_exists( $bin_wp ) ) {
-			$io->section( 'Create a POT file' );
+		if ( ! file_exists( $bin_wp ) ) {
+			$io->error( 'No WP-CLI.' );
 
-			$io->text( 'The build command uses <info>WP-CLI</info> to create a POT file via <fg=green>wp i18n make-pot</fg=green>.' );
-
-			$command = [
-				$bin_wp,
-				'i18n',
-				'make-pot',
-				$build_dir,
-			];
-
-			if ( null !== $slug ) {
-				$command[] = '--slug=' . $slug;
-			}
-
-			$process = new Process( $command );
-
-			$helper->mustRun( $output, $process );
+			return 1;
 		}
+
+		// Make POT.
+		$io->section( 'Create a POT file' );
+
+		$io->text( 'The build command uses <info>WP-CLI</info> to create a POT file via <fg=green>wp i18n make-pot</fg=green>.' );
+
+		$command = [
+			$bin_wp,
+			'i18n',
+			'make-pot',
+			$build_dir,
+		];
+
+		if ( null !== $slug ) {
+			$command[] = '--slug=' . $slug;
+		}
+
+		$process = new Process( $command );
+
+		$helper->mustRun( $output, $process );
 
 		// Distribution archive.
-		if ( file_exists( $bin_wp ) ) {
-			$io->section( 'Create a distribution archive' );
+		$io->section( 'Create a distribution archive' );
 
-			$io->text( 'The build command uses <info>WP-CLI</info> to create a distribution archive via <fg=green>wp dist-archive</fg=green>.' );
+		$io->text( 'The build command uses <info>WP-CLI</info> to create a distribution archive via <fg=green>wp dist-archive</fg=green>.' );
 
-			$command = [
-				$bin_wp,
-				'dist-archive',
-				$build_dir,
-			];
+		$command = [
+			$bin_wp,
+			'dist-archive',
+			$build_dir,
+		];
 
-			if ( null !== $slug ) {
-				$command[] = '--plugin-dirname=' . $slug;
-			}
-
-			$process = new Process( $command );
-
-			$helper->mustRun( $output, $process );
+		if ( null !== $slug ) {
+			$command[] = '--plugin-dirname=' . $slug;
 		}
 
+		$process = new Process( $command );
+
+		$helper->mustRun( $output, $process );
+
+		// Ok.
 		return 0;
 	}
 }
