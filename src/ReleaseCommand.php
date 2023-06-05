@@ -155,7 +155,7 @@ class ReleaseCommand extends Command {
 
 			$zip_filename = "$slug.zip";
 
-			$gcloud_bucket_name = "gs://downloads.pronamic.eu/plugins/$slug";
+			$gcloud_bucket_name = "gs://wp.pronamic.download/plugins/$slug";
 
 			$command = [
 				'gcloud',
