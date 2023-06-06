@@ -152,10 +152,10 @@ class ReleaseCommand extends Command {
 		$gcloud_bucket_name = null;
 
 		switch ( $type ) {
-			casse 'plugin':
+			case 'plugin':
 				$gcloud_bucket_name = 'gs://wp.pronamic.download/plugins/' . $slug;
 				break;
-			casse 'theme':
+			case 'theme':
 				$gcloud_bucket_name = 'gs://wp.pronamic.download/themes/' . $slug;
 				break;
 		}
@@ -198,10 +198,10 @@ class ReleaseCommand extends Command {
 		$pronamic_url = null;
 
 		switch ( $type ) {
-			casse 'plugin':
+			case 'plugin':
 				$pronamic_url = 'https://wp.pronamic.directory/wp-json/pronamic-wp-extensions/v1/plugins/' . $slug;
 				break;
-			casse 'theme':
+			case 'theme':
 				$pronamic_url = 'https://wp.pronamic.directory/wp-json/pronamic-wp-extensions/v1/themes/' . $slug;
 				break;
 		}
