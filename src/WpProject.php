@@ -58,6 +58,36 @@ class WpProject {
 	}
 
 	/**
+	 * Get type.
+	 * 
+	 * @return null|string
+	 */
+	public function get_type() {
+		$type = null;
+
+		$composer_json_file = $this->directory . '/composer.json';
+
+		if ( \is_readable( $composer_json_file ) ) {
+			$data = \file_get_contents( $composer_json_file );
+
+			$composer_json = \json_decode( $data );
+
+			if ( isset( $composer_json->type ) ) {
+				switch ( $composer_json->type ) {
+					case 'wordpress-plugin':
+						$type = 'plugin';
+						break;
+					case 'wordpress-theme':
+						$type = 'theme';
+						break;
+				}
+			}
+		}
+
+		return $type;
+	}
+
+	/**
 	 * Get version.
 	 * 
 	 * @return null|string

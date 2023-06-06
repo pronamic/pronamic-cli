@@ -110,6 +110,7 @@ class ReleaseCommand extends Command {
 		$project = new WpProject( $working_dir );
 
 		$slug      = $project->get_slug();
+		$type      = $project->get_type();
 		$version   = $project->get_version();
 		$changelog = $project->get_changelog();
 
@@ -148,14 +149,23 @@ class ReleaseCommand extends Command {
 		// Google Cloud Storage.
 		$release_to_gcloud_storage = $input->getOption( 'gcloud-storage' );
 
-		if ( $release_to_gcloud_storage ) {
+		$gcloud_bucket_name = null;
+
+		switch ( $type ) {
+			casse 'plugin':
+				$gcloud_bucket_name = 'gs://wp.pronamic.download/plugins/' . $slug;
+				break;
+			casse 'theme':
+				$gcloud_bucket_name = 'gs://wp.pronamic.download/themes/' . $slug;
+				break;
+		}
+
+		if ( $release_to_gcloud_storage && $gcloud_bucket_name ) {
 			$io->section( 'Google Cloud Storage' );
 
 			$zip_filename_version = "$slug.$version.zip";
 
 			$zip_filename = "$slug.zip";
-
-			$gcloud_bucket_name = "gs://wp.pronamic.download/plugins/$slug";
 
 			$command = [
 				'gcloud',
@@ -185,7 +195,18 @@ class ReleaseCommand extends Command {
 		// Pronamic.directory.
 		$release_to_pronamic_directory = $input->getOption( 'pronamic-directory' );
 
-		if ( $release_to_pronamic_directory ) {
+		$pronamic_url = null;
+
+		switch ( $type ) {
+			casse 'plugin':
+				$pronamic_url = 'https://wp.pronamic.directory/wp-json/pronamic-wp-extensions/v1/plugins/' . $slug;
+				break;
+			casse 'theme':
+				$pronamic_url = 'https://wp.pronamic.directory/wp-json/pronamic-wp-extensions/v1/themes/' . $slug;
+				break;
+		}
+
+		if ( $release_to_pronamic_directory && $pronamic_url ) {
 			$io->section( 'Pronamic.directory' );
 
 			$command = [
@@ -195,7 +216,7 @@ class ReleaseCommand extends Command {
 				'version=' . $version,
 				'--request',
 				'PATCH',
-				'https://wp.pronamic.directory/wp-json/pronamic-wp-extensions/v1/plugins/' . $slug,
+				$pronamic_url,
 			];
 
 			$process = new Process( $command );
