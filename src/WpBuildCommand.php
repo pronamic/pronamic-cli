@@ -57,6 +57,13 @@ class WpBuildCommand extends Command {
 					]
 				)
 			);
+
+		$this->addOption(
+			'text-domain-fixer',
+			null,
+			InputOption::VALUE_OPTIONAL,
+			'Text domain fixer standard.'
+		);
 	}
 
 	/**
@@ -151,12 +158,36 @@ class WpBuildCommand extends Command {
 		$bin_phpcbf = $bin_dir . '/phpcbf';
 
 		if ( file_exists( $bin_phpcbf ) ) {
-			$command = \sprintf(
-				$bin_phpcbf . ' -s -v --sniffs=WordPress.Utils.I18nTextDomainFixer %s',
-				$build_dir
-			);
+			$options = [
+				/**
+				 * Show sniff codes in all reports.
+				 * 
+				 * @link https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage
+				 */
+				'-s',
+				/**
+				 * Print processed files.
+				 * 
+				 * @link https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage
+				 */
+				'-v',
+			];
 
-			$process = Process::fromShellCommandline( $command );
+			$standard = $input->getOption( 'text-domain-fixer' );
+
+			if ( null !== $standard ) {
+				$options[] = '--standard=' . $standard;
+			}
+
+			$options[] = '--sniffs=WordPress.Utils.I18nTextDomainFixer';
+
+			$command = [
+				$bin_phpcbf,
+				...$options,
+				$build_dir
+			];
+
+			$process = new Process( $command );
 
 			/**
 			 * PHP Code Beautifier will return exit-code 1 if all 'errors' are fixed.
