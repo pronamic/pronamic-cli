@@ -41,9 +41,20 @@ class ReleaseToWpOrgCommand extends Command {
 			->setDefinition(
 				new InputDefinition(
 					[
-						new InputArgument( 'working-dir', InputArgument::REQUIRED ),
-						new InputArgument( 'svn-dir', InputArgument::REQUIRED ),
-						new InputArgument( 'slug', InputArgument::REQUIRED ),
+						new InputOption(
+							'working-dir',
+							null,
+							InputOption::VALUE_REQUIRED,
+							'The working directory.',
+							'./build/project'
+						),
+						new InputOption(
+							'svn-dir',
+							null,
+							InputOption::VALUE_REQUIRED,
+							'The build directory.',
+							'./build/svn'
+						),
 					]
 				)
 			);
@@ -59,10 +70,28 @@ class ReleaseToWpOrgCommand extends Command {
 	protected function execute( InputInterface $input, OutputInterface $output ) {
 		$io = new SymfonyStyle( $input, $output );
 
-		$working_dir = $input->getArgument( 'working-dir' );
-		$svn_dir     = $input->getArgument( 'svn-dir' );
-		$slug        = $input->getArgument( 'slug' );
-		$svn_url     = 'https://plugins.svn.wordpress.org/' . $slug;
+		$working_dir = $input->getOption( 'working-dir' );
+		$svn_dir     = $input->getOption( 'svn-dir' );
+
+		// Project.
+		$project = new WpProject( $working_dir );
+
+		$slug = $project->get_slug();
+		$type = $project->get_type();
+
+		if ( null === $slug ) {
+			$io->error( 'No slug.' );
+
+			return 1;
+		}
+
+		if ( 'plugin' !== $type ) {
+			$io->error( 'Invalid type.' );
+
+			return 1;
+		}
+
+		$svn_url = 'https://plugins.svn.wordpress.org/' . $slug;
 
 		$file_headers = new FileHeaders();
 
