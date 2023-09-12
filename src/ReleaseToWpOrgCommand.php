@@ -1,6 +1,6 @@
 <?php
 /**
- * Deploy command
+ * Release to WordPress.org command
  *
  * @author    Pronamic <info@pronamic.eu>
  * @copyright 2005-2018 Pronamic
@@ -24,20 +24,20 @@ use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Process\Process;
 
 /**
- * Deploy command
+ * Release to WordPress.org command class
  *
  * @author  Remco Tolsma
  * @version 1.0.0
  * @since   1.0.0
  */
-class WpOrgReleaseCommand extends Command {
+class ReleaseToWpOrgCommand extends Command {
 	/**
 	 * Configure.
 	 */
 	protected function configure() {
 		$this
-			->setName( 'wp-org-release' )
-			->setDescription( 'WordPress.org release.' )
+			->setName( 'release-to-wp-org' )
+			->setDescription( 'Release to WordPress.org.' )
 			->setDefinition(
 				new InputDefinition(
 					[

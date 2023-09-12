@@ -11,10 +11,11 @@ $application = new Application( 'Pronamic CLI', '1.0.0' );
 
 $application->add( new ChangelogCommand() );
 $application->add( new DeployCommand() );
-$application->add( new ReleaseCommand() );
-$application->add( new SvnReleaseCommand() );
+$application->add( new ReleaseToGitHubCommand() );
+$application->add( new ReleaseToPronamicCommand() );
+$application->add( new ReleaseToSvnCommand() );
+$application->add( new ReleaseToWpOrgCommand() );
 $application->add( new VersionCommand() );
 $application->add( new WpBuildCommand() );
-$application->add( new WpOrgReleaseCommand() );
 
 $application->run();

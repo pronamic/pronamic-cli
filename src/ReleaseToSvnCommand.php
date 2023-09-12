@@ -1,6 +1,6 @@
 <?php
 /**
- * Deploy command
+ * Release to Subversion command
  *
  * @author    Pronamic <info@pronamic.eu>
  * @copyright 2005-2018 Pronamic
@@ -23,20 +23,20 @@ use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Process\Process;
 
 /**
- * Deploy command
+ * Release to Subversion command class
  *
  * @author  Remco Tolsma
  * @version 1.0.0
  * @since   1.0.0
  */
-class SvnReleaseCommand extends Command {
+class ReleaseToSvnCommand extends Command {
 	/**
 	 * Configure.
 	 */
 	protected function configure() {
 		$this
-			->setName( 'svn-release' )
-			->setDescription( 'Subversion release.' )
+			->setName( 'release-to-svn' )
+			->setDescription( 'Release to Subversion.' )
 			->setDefinition(
 				new InputDefinition(
 					[
