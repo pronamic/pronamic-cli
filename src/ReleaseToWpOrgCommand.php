@@ -96,7 +96,7 @@ class ReleaseToWpOrgCommand extends Command {
 			return 1;
 		}
 
-		$command = $this->getApplication()->find( 'svn-release' );
+		$command = $this->getApplication()->find( 'release-to-svn' );
 
 		$command_arguments = [
 			'working-dir' => $working_dir,
