@@ -57,6 +57,8 @@ class ReleaseToWpOrgCommand extends Command {
 	 * @return int
 	 */
 	protected function execute( InputInterface $input, OutputInterface $output ) {
+		$io = new SymfonyStyle( $input, $output );
+
 		$working_dir = $input->getArgument( 'working-dir' );
 		$svn_dir     = $input->getArgument( 'svn-dir' );
 		$slug        = $input->getArgument( 'slug' );
