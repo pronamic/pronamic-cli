@@ -120,31 +120,29 @@ class ReleaseToGitHubCommand extends Command {
 			return 0;
 		}
 
-		if ( ! $process->isSuccessful() ) {
-			$command = [
-				'gh',
-				'release',
-				'create',
-				'v' . $version,
-				'--title',
-				$version,
-				'--notes-file',
-				'-',
-				$zip_file_path,
-			];
+		$command = [
+			'gh',
+			'release',
+			'create',
+			'v' . $version,
+			'--title',
+			$version,
+			'--notes-file',
+			'-',
+			$zip_file_path,
+		];
 
-			$changelog_entry = '';
+		$changelog_entry = '';
 
-			$entry = $changelog->get_entry( $version );
+		$entry = $changelog->get_entry( $version );
 
-			if ( null !== $entry ) {
-				$changelog_entry = $entry->body;
-			}
-
-			$process = new Process( $command, null, null, $changelog_entry, null );
-
-			$helper->mustRun( $output, $process );
+		if ( null !== $entry ) {
+			$changelog_entry = $entry->body;
 		}
+
+		$process = new Process( $command, null, null, $changelog_entry, null );
+
+		$helper->mustRun( $output, $process );
 
 		return 0;
 	}
