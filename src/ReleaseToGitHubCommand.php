@@ -78,6 +78,7 @@ class ReleaseToGitHubCommand extends Command {
 
 		$slug    = $project->get_slug();
 		$version = $project->get_version();
+		$changelog = $project->get_changelog();
 
 		if ( null === $slug ) {
 			$io->error( 'No slug.' );
