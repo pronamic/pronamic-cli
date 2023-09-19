@@ -116,6 +116,8 @@ class ReleaseToGitHubCommand extends Command {
 
 		if ( $process->isSuccessful() ) {
 			$io->text( 'GitHub release already exists.' );
+
+			return 0;
 		}
 
 		if ( ! $process->isSuccessful() ) {
