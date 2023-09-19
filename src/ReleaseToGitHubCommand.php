@@ -76,8 +76,8 @@ class ReleaseToGitHubCommand extends Command {
 		// Project.
 		$project = new WpProject( $working_dir );
 
-		$slug    = $project->get_slug();
-		$version = $project->get_version();
+		$slug      = $project->get_slug();
+		$version   = $project->get_version();
 		$changelog = $project->get_changelog();
 
 		if ( null === $slug ) {
