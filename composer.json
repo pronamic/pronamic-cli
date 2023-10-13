@@ -15,6 +15,12 @@
     "bin": [
         "bin/pronamic"
     ],
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
     "require": {
         "php": ">=7.4",
         "symfony/console": "^5.0 || ^6.0 || ^6.1 || ^6.2",
@@ -25,11 +31,5 @@
     "require-dev": {
         "pronamic/wp-coding-standards": "^2.0",
         "yoast/phpunit-polyfills": "^2.0"
-    },
-    "config": {
-        "sort-packages": true,
-        "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true
-        }
     }
 }
