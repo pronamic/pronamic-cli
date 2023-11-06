@@ -1064,11 +1064,11 @@ class VersionCommand extends Command {
 		$composer_json_new = json_decode( file_get_contents( $cwd . '/' . $file ) );
 
 		if ( ! is_object( $composer_json_old ) ) {
-			return [];
+			return '';
 		}
 
 		if ( ! is_object( $composer_json_new ) ) {
-			return [];
+			return '';
 		}
 
 		// Composer `composer.lock`.
