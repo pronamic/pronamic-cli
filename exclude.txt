@@ -96,6 +96,10 @@ phpcs.xml
 phpcs.xml.dist
 phpcs.ruleset.xml
 
+# PHP_CodeSniffer - Pronamic text domain fixer
+# https://github.com/pronamic/pronamic-cli/blob/542a76bec026ac6f32fd3000022a2c36c6aa79ab/src/WpBuildCommand.php#L153-L199
+phpcs-text-domain-fixer.xml
+
 # phpDocumentor (https://www.phpdoc.org/)
 phpdoc.xml
 phpdoc.dist.xml
