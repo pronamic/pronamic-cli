@@ -111,6 +111,9 @@ phpdoc.dist.xml
 phpmd.ruleset.xml
 phpmd.xml.dist
 
+# PhpMetrics (https://github.com/phpmetrics/PhpMetrics)
+.phpmetrics.json
+
 # PHPUnit (https://phpunit.de/)
 phpunit.xml
 phpunit.xml.dist
