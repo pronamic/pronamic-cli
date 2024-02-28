@@ -188,6 +188,7 @@ class WpBuildCommand extends Command {
 			];
 
 			$process = new Process( $command );
+			$process->setTimeout( null );
 
 			/**
 			 * PHP Code Beautifier will return exit-code 1 if all 'errors' are fixed.
