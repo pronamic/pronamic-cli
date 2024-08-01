@@ -236,6 +236,7 @@ class WpBuildCommand extends Command {
 		}
 
 		$process = new Process( $command );
+		$process->setTimeout( null );
 
 		$helper->mustRun( $output, $process );
 
