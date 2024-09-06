@@ -13,8 +13,6 @@ $application->add( new ChangelogCommand() );
 $application->add( new DeployCommand() );
 $application->add( new ReleaseToGitHubCommand() );
 $application->add( new ReleaseToPronamicCommand() );
-$application->add( new ReleaseToSvnCommand() );
-$application->add( new ReleaseToWpOrgCommand() );
 $application->add( new VersionCommand() );
 $application->add( new WpBuildCommand() );
 

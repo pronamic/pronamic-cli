@@ -21,22 +21,6 @@ Show the changelong entry of a specific version from `CHANGELOG.md`.
 vendor/bin/pronamic changelog 1.0.0
 ```
 
-### `svn-release`
-
-Release a directory to a Subversion repository.
-
-```sh
-vendor/bin/pronamic svn-release build/plugin build/svn https://plugins.svn.wordpress.org/pronamic-pay-with-mollie-for-gravity-forms 1.0.0
-```
-
-### `wp-org-release`
-
-Release a directory to the WordPress Plugin Directory.
-
-```sh
-vendor/bin/pronamic wp-org-release build/plugin build/svn pronamic-pay-with-mollie-for-gravity-forms
-```
-
 ## Examples
 
 ```sh
@@ -66,18 +50,6 @@ Here is a list of alternatives that we found. However, none of these satisfied o
 - [WordPress Plugin Directory Deployment Script](https://github.com/GaryJones/wordpress-plugin-svn-deploy) by [Gary Jones](https://github.com/GaryJones)
 - [WordPress Plugin SVN Deploy](https://github.com/nk-o/action-wordpress-plugin-deploy) by [Nikita](https://github.com/nk-o)
 - [sudar/wp-plugin-in-github](https://github.com/sudar/wp-plugin-in-github) by [Sudar Muthu](https://github.com/sudar)
-
-## Subversion checkout
-
-http://svnbook.red-bean.com/en/1.7/svn.ref.svn.c.checkout.html
-
-```sh
-svn co https://plugins.svn.wordpress.org/pronamic-ideal svn/pronamic-ideal --depth immediates
-
-svn update --quiet svn/pronamic-ideal/trunk --set-depth infinity
-
-svn update --quiet svn/pronamic-ideal/assets --set-depth infinity
-```
 
 ## Git checkout
 
@@ -143,26 +115,6 @@ mkdir tar/pronamic-ideal
 tar -zcvf ./tar/pronamic-ideal/pronamic-ideal.5.4.1.tar.gz ./build/pronamic-ideal/*
 ```
 
-## To Subversion
-
-```sh
-rsync --recursive --delete ./build/pronamic-ideal/ ./svn/pronamic-ideal/trunk/
-
-svn status ./svn/pronamic-ideal/trunk/ | grep '^!' | cut -c 9- | xargs -d '\n' -i svn delete {}@
-
-svn status ./svn/pronamic-ideal/trunk/ | grep '^?' | cut -c 9- | xargs -d '\n' -i svn add {}@
-
-svn commit ./svn/pronamic-ideal/trunk/ -m 'Update'
-```
-
-## Tag Subversion
-
-```sh
-svn copy ./svn/pronamic-ideal/trunk/ ./svn/pronamic-ideal/tags/4.5.1/
-
-svn commit ./svn/pronamic-ideal/tags/4.5.1/ -m 'Tagging version 4.5.1'
-```
-
 ## Requirements
 
 ```sh
@@ -184,59 +136,6 @@ brew install grep --with-default-names
 # https://aws.amazon.com/cli/
 brew install awscli
 ```
-
-## `svn status` and `xargs`
-
-
-### `svn status`, `xargs` and `svn delete`
-
-```sh
-svn status | grep '^!' | cut -c 9- | xargs -d '\n' -i svn delete {}@
-# ^^^^^^^^   ^^^^^^^^^   ^^^^^^^^^   ^^^^^^^^^^^^^^^^ ^^^^^^^^^^^^^^
-#   |            |           |             |               |       |
-#   |            |           |             |               |       \\ https://stackoverflow.com/questions/757435/how-to-escape-characters-in-subversion-managed-file-names
-#   |            |           |             |               |       \\ http://svnbook.red-bean.com/en/1.7/svn.advanced.pegrevs.html
-#   |            |           |             |               |
-#   |            |           |             |               \\ Subversion delete.
-#   |            |           |             |
-#   |            |           |             \\ Xargs.
-#   |            |           |
-#   |            |           \\ Cut.
-#   |            |           \\ https://github.com/apache/subversion/blob/1.10.2/subversion/svn/status.c#L447-L460
-#   |            |
-#   |            \\ Grep.
-#   |
-#   \\ Subversion status.
-```
-
-### `svn status`, `xargs` and `svn add`
-
-```sh
-svn status | grep '^?' | cut -c 9- | xargs -d '\n' -i svn add {}@
-# ^^^^^^^^   ^^^^^^^^^   ^^^^^^^^^   ^^^^^^^^^^^^^^^^ ^^^^^^^^^^^
-#   |            |           |             |               |    |
-#   |            |           |             |               |    \\ https://stackoverflow.com/questions/757435/how-to-escape-characters-in-subversion-managed-file-names
-#   |            |           |             |               |    \\ http://svnbook.red-bean.com/en/1.7/svn.advanced.pegrevs.html
-#   |            |           |             |               |
-#   |            |           |             |               \\ Subversion add.
-#   |            |           |             |
-#   |            |           |             \\ Xargs.
-#   |            |           |
-#   |            |           \\ Cut.
-#   |            |           \\ https://github.com/apache/subversion/blob/1.10.2/subversion/svn/status.c#L447-L460
-#   |            |
-#   |            \\ Grep.
-#   |
-#   \\ Subversion status.
-```
-
-## WordPress.org assets
-
-- https://developer.wordpress.org/plugins/wordpress-org/plugin-assets/
-- https://developer.wordpress.org/plugins/wordpress-org/how-to-use-subversion/
-- https://github.com/woocommerce/woocommerce/tree/3.4.5/.wordpress-org
-- https://github.com/woocommerce/woocommerce-gateway-stripe/tree/4.1.10/wordpress_org_assets
-- https://github.com/sudar/email-log/tree/2.2.5/assets-wp-repo
 
 ## Links
 
