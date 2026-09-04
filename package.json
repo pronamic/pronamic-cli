@@ -1,6 +1,7 @@
 {
   "name": "@pronamic/pronamic-cli",
   "version": "1.1.1",
+  "description": "Deprecated and archived command-line interface for Pronamic. AI-assisted tools now cover its workflows.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pronamic/pronamic-cli.git"
@@ -11,7 +12,10 @@
     "release",
     "deployer",
     "composer",
-    "version"
+    "version",
+    "deprecated",
+    "archived",
+    "ai-assisted"
   ],
   "author": "Pronamic",
   "license": "GPL-3.0-or-later",

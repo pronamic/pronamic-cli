@@ -1,6 +1,6 @@
 {
     "name": "pronamic/pronamic-cli",
-    "description": "Pronamic CLI is the command-line interface for Pronamic.",
+    "description": "Deprecated and archived command-line interface for Pronamic. AI-assisted tools now cover its workflows.",
     "authors": [
         {
             "name": "Pronamic",

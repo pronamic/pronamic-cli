@@ -4,6 +4,10 @@
 	Pronamic CLI is the command-line interface for Pronamic.
 </p>
 
+> **Deprecated and archived**
+>
+> This project is no longer maintained and is not planned for further development. With the rise of AI-assisted tools, commit review, changelog creation, release-candidate preparation, and similar workflows can be handled without this CLI. The repository is kept as a historical reference. See [DEPRECATED.md](DEPRECATED.md) for details.
+
 ## Table of contents
 
 - [Commands](#commands)
